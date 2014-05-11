@@ -40,7 +40,7 @@ console.log("And I like " + person['favoriteColor'] + ", ya " + person[key] + "!
 var persons = [];
 	persons[0] = {
 		name: "Heather",
-		favoriteColor: "blue",
+		favoriteColor: "red",
 		address: {
 			street: "123 Washington Street",
 			city: "Charlotte",
@@ -50,6 +50,7 @@ var persons = [];
 		born: 1974,
 		gender: "female",
 	};
+
 	persons[1] = {
 		name: "Will",
 		favoriteColor: "green",
@@ -61,8 +62,8 @@ var persons = [];
 		},
 		born: 1980,
 		gender: "male",
-		 
-	};	
+	};	 
+		
 	persons[2] = {
 		name: "Erwin",
 		favoriteColor: "orange",
@@ -76,6 +77,7 @@ var persons = [];
 		gender: "male",
 		 
 	};
+
 	persons[3] = {
 		name: "Maria",
 		favoriteColor: "blue",
@@ -89,6 +91,7 @@ var persons = [];
 		gender: "female",
 		 
 	};
+	
 	persons[4] = {
 		name: "Troy",
 		favoriteColor: "orange",
@@ -104,7 +107,6 @@ var persons = [];
 
 
 // 1. log everyone that doesnt live in NC
-
 
 persons.forEach(function(element, index, array){
 	//console.log(element.address.state);
@@ -186,6 +188,7 @@ var maxYear = years.reduce(function(previousValue, currentValue, index, array){
 console.log(maxYear);
 
 //6. figure out everyones age 
+
 persons = persons.map(function(element) {
 	//console.log(element);
 	element.age = 2014 - element.born;
@@ -194,6 +197,7 @@ persons = persons.map(function(element) {
 console.log(persons);
 
 //7. find out the youngest persons 
+
 var ages = persons.map(function(element) {
 	return element.age;
 });
@@ -222,13 +226,54 @@ var averageAge = totalAge / totalPeople;
 averageAge = Math.round(averageAge);
 console.log("The average age of all people is " + averageAge);
 
+//10. most favorited color
+
+var colorTotals = {};
+persons.forEach(function(element) {
+	var colorkey = element.favoriteColor
+	if (colorTotals[colorkey] == undefined) {
+		colorTotals[colorkey] = 1;
+	} else {
+		colorTotals[colorkey] ++;
+	}
+});
+
+var popColor = "";
+var popColorTotal = 0;
+for (var key in colorTotals) {
+	if (colorTotals[key] > popColorTotal) {
+		popColor = key;
+		popColorTotal = colorTotals[key];
+	}
+};
+console.log(popColorTotal + " people like the color " + popColor + ", making it the most popular!");
+
+//11. count how many people like the color orange
+
+var popColorPeople = [];
+persons.forEach(function(element) {
+	if (element.favoriteColor == popColor) {
+		popColorPeople.push(element.name);
+	}
+});
+var message = "The most popular color " + popColor + " is liked by ";
+for (var i = 0; i < popColorPeople.length; i++) {
+	message += popColorPeople[i] + " & " ;
+};
+var orangeMessage = message.slice(0, -2);
+console.log(orangeMessage);
+
+
+//12. build out a mailing address. add a mailing address node create a string 
+persons.forEach(function(element) {
+	console.log(element.address);
+})
+
 
 
 /*=====================================
-10. most favorited color
-11. count how many people like the color orange
-12. build out a mailing address. add a mailing address node create a string 
-.forEach: 2
-.map: 4
-.reduce: 4
+Total count includes 1 map, 2 foreach, & 1 reduce from optional homework. (pleaase!!!)
+.forEach: 7
+.map: 6
+.reduce: 5
 */
