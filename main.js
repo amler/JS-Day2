@@ -34,7 +34,7 @@ console.log("And I like " + person['favoriteColor']); //referencing string
 var key = 'favoriteSwear';
 console.log("And I like " + person['favoriteColor'] + ", ya " + person[key] + "!!!");  
 
-
+*/
 
 var persons = [];
 	persons[0] = {
@@ -107,7 +107,7 @@ var persons = [];
 		lottoNumbers: [16, 32, 05, 31, 47, 55]
 	};
 
-
+/*
 //  log everyone that doesnt live in NC
 
 persons.forEach(function(element, index, array){
@@ -325,7 +325,6 @@ var agesDecade = persons.map(function(element) {
 });
 console.log(agesDecade);
 
-*/
 // Reduce attempts
 var sentence = ["I ",  "don't ", "remember ", "math ", "enough to ", "come up with ", "multiple examples for", " reduce."].reduce(function(x, y) {
 	return x + y;
@@ -333,14 +332,65 @@ var sentence = ["I ",  "don't ", "remember ", "math ", "enough to ", "come up wi
 console.log(sentence);
 
 
+var lastNames = [];
+	lastNames[0] = 'Smith';
+	lastNames[1] = 'Huxtable';
+	lastNames[2] = 'Jones';
+	lastNames[3] = 'Johnson';
+	lastNames[4] = 'Williams';
+console.log(lastNames);
+
+var test = persons.map(function(element, index) {
+	var list = function(friends) {
+    for (var key in friends) {
+    console.log([key]);
+    }
+};
+
+lastNames.forEach(function)
+	lastName[index] = Math.floor(Math.random() * lastNames.length);
+	console.log(lastName);
+});
 
 
+//	element.age = 2014 - element.born;
+//	return element;
+
+*/
+var inventory = [];
+	inventory[0] = {weeklyExpense: 4.99};
+	inventory[1] = {weeklyExpense: 3.95};
+	inventory[2] = {weeklyExpense: 1.25};
+	inventory[3] = {weeklyExpense: 7.99};
+var prices = inventory.map(function(element) {
+  return element.weeklyExpense;
+});
+console.log(prices);
+
+var annualExpense = prices.reduce(function(x, y) {
+	return (x + y);
+});
+console.log(annualExpense * 52);
+
+
+
+var numbers = [25, 50, 45, 87, 23];
+var roots = numbers.map(Math.sqrt1_2);
+console.log(roots);
+/*
+inventory.forEach(function(element, index, array){
+	//console.log(element.address.state);
+	if (element.address.state !== "NC") {
+		console.log(element.name + " does not live in North Carolina");
+	}
+});
+*/
 /*
 =====================================
 Total count includes 1 map, 2 foreach, & 1 reduce from optional homework. (pleaase!!!)
 .forEach: 10
-.map: 9
-.reduce: 6
+.map: 10
+.reduce: 7
 
 */
 
