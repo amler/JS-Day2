@@ -228,7 +228,7 @@ var totalAge = ages.reduce(function(x, y) {
 var averageAge = totalAge / totalPeople;
 averageAge = Math.round(averageAge);
 //console.log("The average age of all people is " + averageAge);
-
+*/
 //most favorited color
 
 var colorTotals = {};
@@ -240,7 +240,33 @@ persons.forEach(function(element) {
 		colorTotals[colorkey] ++;
 	}
 });
+console.log(colorTotals);
+var orangeLovers = [];
+persons.forEach(function(element) {
+	if (element.favoriteColor === "orange") {
+		orangeLovers.push(1);
+	}
+});
+var totalOrangLovers = orangeLovers.reduce(function(x, y) {
+	return x + y;
+})
+console.log((totalOrangLovers * 100)/ persons.length + "% of people love the color orange.");
+//var popColorPeople = [];
+//persons.forEach(function(element) {
+//	if (element.favoriteColor == popColor) {
+//		popColorPeople.push(element.name);
+//	}
+//});
+/*
+var totalPrice = prices.reduce(function(x, y) {
+  return (x + y);
+})
 
+var averagePrice = totalPrice / items.length;
+
+*/
+
+/*
 var popColor = "";
 var popColorTotal = 0;
 for (var key in colorTotals) {
@@ -356,7 +382,6 @@ lastNames.forEach(function)
 //	element.age = 2014 - element.born;
 //	return element;
 
-*/
 var inventory = [];
 	inventory[0] = {weeklyExpense: 4.99};
 	inventory[1] = {weeklyExpense: 3.95};
@@ -377,7 +402,7 @@ console.log(annualExpense * 52);
 var numbers = [25, 50, 45, 87, 23];
 var roots = numbers.map(Math.sqrt1_2);
 console.log(roots);
-/*
+
 inventory.forEach(function(element, index, array){
 	//console.log(element.address.state);
 	if (element.address.state !== "NC") {
@@ -390,7 +415,7 @@ inventory.forEach(function(element, index, array){
 Total count includes 1 map, 2 foreach, & 1 reduce from optional homework. (pleaase!!!)
 .forEach: 10
 .map: 10
-.reduce: 7
+.reduce: 8
 
 */
 
