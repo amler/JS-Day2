@@ -108,7 +108,7 @@ var persons = [];
 	};
 
 /*
-//  log everyone that doesnt live in NC
+//==========log everyone that doesnt live in NC==========
 
 persons.forEach(function(element, index, array){
 	//console.log(element.address.state);
@@ -117,7 +117,7 @@ persons.forEach(function(element, index, array){
 	}
 });
 
-// count gender 
+//=============count gender======================= 
 
 var femaleCount = [];
 persons.forEach(function(element, index, array){
@@ -142,7 +142,7 @@ console.log("There are " + totalPeople + " people.");
 console.log("There are " + totalFemales + " females.");
 console.log("There are " + totalMales + " males.");
 
-// more men than women
+//============more men than women=================
 
 if (totalMales > totalFemales) {
 	console.log("There are more men than women.");
@@ -152,7 +152,7 @@ if (totalMales > totalFemales) {
 	console.log("There are more women than men.");
 }; 
 
-// build out mr or ms display name
+//===================build out mr or ms display name============
 
 var guestList = persons.map(function(element) {
 	//console.log(element);
@@ -164,7 +164,7 @@ var guestList = persons.map(function(element) {
 });
 console.log(guestList);
 
-// find out the oldest year someone was born in
+//============find out the oldest year someone was born in==============
 
 var years = persons.map(function(element) {
 	return element.born;
@@ -198,7 +198,7 @@ persons = persons.map(function(element) {
 });
 //console.log(persons);
 
-// find out the youngest persons 
+//===========find out the youngest persons=============
 
 var ages = persons.map(function(element) {
 	return element.age;
@@ -228,8 +228,8 @@ var totalAge = ages.reduce(function(x, y) {
 var averageAge = totalAge / totalPeople;
 averageAge = Math.round(averageAge);
 //console.log("The average age of all people is " + averageAge);
-*/
-//most favorited color
+
+//===========most favorited color==============
 
 var colorTotals = {};
 persons.forEach(function(element) {
@@ -249,24 +249,11 @@ persons.forEach(function(element) {
 });
 var totalOrangLovers = orangeLovers.reduce(function(x, y) {
 	return x + y;
-})
+});
 console.log((totalOrangLovers * 100)/ persons.length + "% of people love the color orange.");
-//var popColorPeople = [];
-//persons.forEach(function(element) {
-//	if (element.favoriteColor == popColor) {
-//		popColorPeople.push(element.name);
-//	}
-//});
-/*
-var totalPrice = prices.reduce(function(x, y) {
-  return (x + y);
-})
 
-var averagePrice = totalPrice / items.length;
+//========blarg===================
 
-*/
-
-/*
 var popColor = "";
 var popColorTotal = 0;
 for (var key in colorTotals) {
@@ -277,7 +264,7 @@ for (var key in colorTotals) {
 };
 console.log(popColorTotal + " people like the color " + popColor + ", making it the most popular!");
 
-// count how many people like the color orange
+//==========count how many people like the color orange===========
 
 var popColorPeople = [];
 persons.forEach(function(element) {
@@ -293,7 +280,8 @@ var orangeMessage = message.slice(0, -2);
 console.log(orangeMessage);
 
 
-// build out a mailing address. add a mailing address node create a string 
+// ==============build out a mailing address. add a mailing address node create a string ============
+
 var mailingAddress = [];
 persons.forEach(function(element) {
 	mailingAddress.push(element.name + " " + element.address.street + " " + element.address.city + " " + element.address.state + " " + element.address.zipcode);
@@ -301,8 +289,7 @@ persons.forEach(function(element) {
 });
 console.log(mailingAddress);
 
-//====================================================== Who won the lottery 
-
+//================ Who won the lottery ================
 
 var winningNumbers = [10, 28, 15, 09, 07, 11];
 persons.forEach(function(person){
@@ -317,13 +304,15 @@ persons.forEach(function(person){
 	}	
 });
 
-//=========================
+//=========generated an array of arrays for the lotto nums==========
+
 var lottosArray = persons.map(function(element) {
 	return element.lottoNumbers;
 });
 console.log(lottosArray);
 
-///=============================
+///================Find the total of lotto winners==========
+
 var lottoWinners = persons.map(function(person, index, array){
 	if ( person.lottoNumbers[0] === winningNumbers[0] &&
 		 person.lottoNumbers[1] === winningNumbers[1] &&
@@ -344,19 +333,20 @@ var totalWinners = lottoWinners.reduce(function(x, y) {
 console.log("There is a total of " + totalWinners + " winner");
 
 
-// how old will everyone be in 10 years
+//==============how old will everyone be in 10 years=========
 
 var agesDecade = persons.map(function(element) {
 	return element.age + 10;
 });
 console.log(agesDecade);
 
-// Reduce attempts
+//=========Reduce attempts ===========
+
 var sentence = ["I ",  "don't ", "remember ", "math ", "enough to ", "come up with ", "multiple examples for", " reduce."].reduce(function(x, y) {
 	return x + y;
 });
 console.log(sentence);
-
+*/
 
 var lastNames = [];
 	lastNames[0] = 'Smith';
@@ -379,9 +369,8 @@ lastNames.forEach(function)
 });
 
 
-//	element.age = 2014 - element.born;
-//	return element;
-
+/*
+//===========blah map & reduce==========
 var inventory = [];
 	inventory[0] = {weeklyExpense: 4.99};
 	inventory[1] = {weeklyExpense: 3.95};
@@ -398,18 +387,14 @@ var annualExpense = prices.reduce(function(x, y) {
 console.log(annualExpense * 52);
 
 
-
+//=========blah reduce========
 var numbers = [25, 50, 45, 87, 23];
 var roots = numbers.map(Math.sqrt1_2);
 console.log(roots);
 
-inventory.forEach(function(element, index, array){
-	//console.log(element.address.state);
-	if (element.address.state !== "NC") {
-		console.log(element.name + " does not live in North Carolina");
-	}
-});
 */
+
+
 /*
 =====================================
 Total count includes 1 map, 2 foreach, & 1 reduce from optional homework. (pleaase!!!)
